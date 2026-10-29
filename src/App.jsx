@@ -1,8 +1,11 @@
-import Navbar from './components/Navbar/Navbar';
 import { useMemo, useState, useEffect } from 'react';
+import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import styles from './App.module.css';
 import Section from './components/Section/Section';
+import FAQ from './components/FAQ/FAQ';
+import FeedbackModal from './components/FeedbackModal/FeedbackModal';
+import Player from './components/Player/Player';
 import { fetchTopAlbums, fetchNewAlbums, fetchSongs, fetchGenres } from './helpers/api';
 
 function App() {
@@ -11,6 +14,7 @@ function App() {
   const [songsData, setSongsData] = useState([]);
   const [genres, setGenres] = useState([{ key: "all", label: "All" }]);
   const [selectedFilterIndex, setSelectedFilterIndex] = useState(0);
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
   useEffect(() => {
     let isMounted = true;
@@ -50,7 +54,10 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <Navbar searchData={[...topAlbumData, ...newAlbumData]} />
+      <Navbar
+        searchData={[...topAlbumData, ...newAlbumData]}
+        onFeedbackClick={() => setIsFeedbackOpen(true)}
+      />
       <Hero />
       <div className={styles.sectionContainer}>
         <Section title="Top Albums" data={topAlbumData} type="album" />
@@ -64,7 +71,15 @@ function App() {
           selectedFilterIndex={selectedFilterIndex}
           setSelectedFilterIndex={setSelectedFilterIndex}
         />
+        <div className={styles.divider} />
+        <FAQ />
       </div>
+
+      <FeedbackModal
+        isOpen={isFeedbackOpen}
+        handleClose={() => setIsFeedbackOpen(false)}
+      />
+      <Player />
     </div>
   );
 }

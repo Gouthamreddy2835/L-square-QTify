@@ -1,5 +1,7 @@
 .app {
   min-height: 100vh;
+  width: 100%;
+  overflow-x: clip;
   background-color: var(--color-black, #121212);
   color: var(--color-white, #ffffff);
   font-family: "Poppins", sans-serif;
@@ -15,6 +17,6 @@
 .divider {
   height: 1px;
   background-color: var(--color-primary, #34c94b);
-  margin: 0 32px;
+  margin: 0 clamp(16px, 3vw, 32px);
   opacity: 0.3;
 }

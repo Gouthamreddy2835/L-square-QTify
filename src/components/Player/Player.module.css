@@ -1,0 +1,73 @@
+.playerWrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: var(--color-black, #121212);
+  border-top: 1px solid #282828;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.songInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 200px;
+}
+
+.songImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.songTitle {
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  margin: 0;
+}
+
+.albumTitle {
+  color: #a0a0a0;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  margin: 4px 0 0;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  max-width: 600px;
+}
+
+.playBtn {
+  padding: 0 !important;
+}
+
+.progressBarWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+}
+
+.time {
+  color: #a0a0a0;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+}
+
+.slider {
+  color: var(--color-primary, #34c94b) !important;
+  height: 4px !important;
+}

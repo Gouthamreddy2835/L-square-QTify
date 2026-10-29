@@ -41,3 +41,13 @@ export const fetchGenres = async () => {
         return [];
     }
 };
+
+export const fetchFAQs = async () => {
+  try {
+    const res = await axios.get(`${backendEndpoint}/faq`);
+    return res.data;
+  } catch (err) {
+    console.error("Error fetching FAQs:", err);
+    return { data: [] };
+  }
+};

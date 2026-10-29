@@ -1,5 +1,5 @@
 .sectionWrapper {
-  padding: 16px 32px;
+  padding: 16px clamp(16px, 3vw, 32px);
 }
 
 .header {

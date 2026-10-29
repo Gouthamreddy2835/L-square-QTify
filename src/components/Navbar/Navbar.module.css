@@ -1,9 +1,45 @@
 .navbar {
   background-color: var(--color-primary);
-  height: 74px;
+  height: 64px;
+  min-height: 64px;
   width: 100%;
-  padding: 0px 32px;
-  display: flex;
+  padding: 0 clamp(16px, 3vw, 32px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 404px) minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.navbar > a {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  line-height: 0;
+}
+
+.navbar > :nth-child(2) {
+  width: 100%;
+  justify-self: center;
+}
+
+.navbar > :last-child {
+  justify-self: end;
+}
+
+@media (max-width: 720px) {
+  .navbar {
+    height: auto;
+    padding: 12px 16px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    row-gap: 12px;
+  }
+
+  .navbar > :nth-child(2) {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
 }

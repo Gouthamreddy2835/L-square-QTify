@@ -4,7 +4,7 @@ import Logo from "../Logo/Logo";
 import Search from "../Search/Search";
 import styles from "./Navbar.module.css";
 
-function Navbar({ searchData }) {
+function Navbar({ searchData, onFeedbackClick }) {
   return (
     <nav className={styles.navbar}>
       <Link to="/">
@@ -14,7 +14,9 @@ function Navbar({ searchData }) {
         placeholder="Search a song of your choice"
         searchData={searchData}
       />
-      <Button>Give Feedback</Button>
+      <Button onClick={onFeedbackClick} >
+        Give Feedback
+      </Button>
     </nav>
   );
 }
