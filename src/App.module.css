@@ -1,0 +1,8 @@
+.app {
+  min-height: 100vh;
+  background-color: var(--color-black, #121212);
+  color: var(--color-white, #ffffff);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+}

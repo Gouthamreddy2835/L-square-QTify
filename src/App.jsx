@@ -1,18 +1,16 @@
 import Navbar from './components/Navbar/Navbar';
-import React from 'react';
+import React, { useState } from 'react';
 import Hero from './components/Hero/Hero';
-import './App.css';
+import styles from './App.module.css';
 
 function App() {
-  const searchData = (query) => {
-    console.log(`Searching for: ${query}`);
-  };
+  const [searchData, setSearchData] = useState([]);
+
 
   return (
-    <div className="App">
+    <div className={styles.app}>
       <Navbar searchData={searchData} />
       <Hero />
-      {/* Other components can be added here */}
     </div>
   );
 }
