@@ -1,13 +1,11 @@
-import React from "react";
 import styles from "./Search.module.css";
 import searchIcon from "../../assets/search-icon.svg";
 import { useAutocomplete } from "@mui/base/useAutocomplete";
 import { styled } from "@mui/system";
 import { truncate } from "../../helpers/helpers.jsx";
 import { useNavigate } from "react-router-dom";
-import { Tooltip } from "@mui/material";
 
-const Listbox = styled("ul")(({ theme }) => ({
+const Listbox = styled("ul")(() => ({
   width: "100%",
   margin: 0,
   padding: 0,
@@ -39,7 +37,6 @@ const Listbox = styled("ul")(({ theme }) => ({
 function Search({ searchData, placeholder }) {
   const {
     getRootProps,
-    getInputLabelProps,
     value,
     getInputProps,
     getListboxProps,

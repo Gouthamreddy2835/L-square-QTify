@@ -3,6 +3,10 @@
   background-color: var(--color-black, #121212);
   color: var(--color-white, #ffffff);
   font-family: "Poppins", sans-serif;
+}
+
+.sectionContainer {
   display: flex;
   flex-direction: column;
+  gap: 12px;
 }

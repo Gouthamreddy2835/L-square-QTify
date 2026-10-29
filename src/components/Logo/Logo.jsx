@@ -1,4 +1,3 @@
-import React from "react";
 import LogoImage from "../../assets/Logo.png";
 
 export default function Logo() {
