@@ -1,0 +1,10 @@
+.rightNavigation {
+  position: absolute;
+  right: 0;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}

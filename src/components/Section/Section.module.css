@@ -1,5 +1,5 @@
 .sectionWrapper {
-  padding: 24px 32px;
+  padding: 16px 32px;
 }
 
 .header {
@@ -24,9 +24,15 @@
   font-weight: 600;
   font-family: "Poppins", sans-serif;
   margin: 0;
+  user-select: none;
 }
 
-.cardWrapper {
+.cardsContainer {
+  position: relative;
+  width: 100%;
+}
+
+.cardGrid {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;

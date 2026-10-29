@@ -1,9 +1,11 @@
-import { useState } from 'react';
-import styles from './Section.module.css';
-import Card from '../Card/Card';
-import { CircularProgress } from '@mui/material';
+import React, { useState } from "react";
+import { CircularProgress } from "@mui/material";
+import Card from "../Card/Card";
+import Carousel from "../Carousel/Carousel";
+import styles from "./Section.module.css";
 
 const Section = ({ title, data, type }) => {
+
   const [carouselToggle, setCarouselToggle] = useState(true);
 
   const handleToggle = () => {
@@ -15,7 +17,7 @@ const Section = ({ title, data, type }) => {
       <div className={styles.header}>
         <h3>{title}</h3>
         <h4 className={styles.toggleText} onClick={handleToggle}>
-          {!carouselToggle ? "Collapse" : "Show All"}
+          {carouselToggle ? "Show All" : "Collapse"}
         </h4>
       </div>
 
@@ -24,10 +26,19 @@ const Section = ({ title, data, type }) => {
           <CircularProgress />
         </div>
       ) : (
-        <div className={styles.cardWrapper}>
-          {data.map((item) => (
-            <Card key={item.id} data={item} type={type} />
-          ))}
+        <div className={styles.cardsContainer}>
+          {carouselToggle ? (
+            <Carousel
+              data={data}
+              renderComponent={(item) => <Card data={item} type={type} />}
+            />
+          ) : (
+            <div className={styles.cardGrid}>
+              {data.map((item) => (
+                <Card key={item.id} data={item} type={type} />
+              ))}
+            </div>
+          )}
         </div>
       )}
     </div>
