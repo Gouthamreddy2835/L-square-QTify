@@ -21,3 +21,23 @@ export const fetchNewAlbums = async () => {
         return [];
     }
 };
+
+export const fetchSongs = async () => {
+    try {
+        const response = await axios.get(`${backendEndpoint}/songs`);
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching songs:", error);
+        return [];
+    }
+};
+
+export const fetchGenres = async () => {
+    try {
+        const response = await axios.get(`${backendEndpoint}/genres`);
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching genres:", error);
+        return [];
+    }
+};
